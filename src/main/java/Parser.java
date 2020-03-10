@@ -6,6 +6,7 @@ import org.jsoup.select.Elements;
 import java.io.IOException;
 
 import java.net.URL;
+import java.util.ArrayList;
 
 public class Parser
 {
@@ -15,12 +16,13 @@ public class Parser
 
     private String city;
 
+    public static ArrayList<CityData> datas = new ArrayList<>();
     private CityData data = new CityData();
-
 
     Parser(String city)
     {
         this.city = city;
+        datas.add(data);
 
         data.setCity(city);
 
@@ -127,7 +129,6 @@ public class Parser
 
     }
 
-
     private void pullPopulation()
     {
         String population = page.select("span[class=no-wikidata][data-wikidata-property-id=P1082]").first().text();
@@ -174,4 +175,5 @@ public class Parser
     public CityData getData() {
         return data;
     }
+
 }

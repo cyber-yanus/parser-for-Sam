@@ -1,15 +1,15 @@
 public class CityData
 {
-    private String state = "";
-    private String city = "";
-    private String area = "";
-    private String height_NUM = "";
-    private String climate_type = "";
-    private String time_zone = "";
-    private String population = "";
-    private String description = "";
-    private String car_code = "";
-    private String telephone_code = "";
+    private String state = " ";
+    private String city = " ";
+    private String area = " ";
+    private String height_NUM = " ";
+    private String climate_type = " ";
+    private String time_zone = " ";
+    private String population = " ";
+    private String description = " ";
+    private String car_code = " ";
+    private String telephone_code = " ";
 
     public void setState(String state) {
         this.state = state;
@@ -49,6 +49,47 @@ public class CityData
 
     public void setTelephone_code(String telephone_code) {
         this.telephone_code = telephone_code;
+    }
+
+
+    public String getState() {
+        return state;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public String getArea() {
+        return area;
+    }
+
+    public String getHeight_NUM() {
+        return height_NUM;
+    }
+
+    public String getClimate_type() {
+        return climate_type;
+    }
+
+    public String getTime_zone() {
+        return time_zone;
+    }
+
+    public String getPopulation() {
+        return population;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getCar_code() {
+        return car_code;
+    }
+
+    public String getTelephone_code() {
+        return telephone_code;
     }
 
     @Override
