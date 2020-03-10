@@ -6,8 +6,8 @@ public class Main
 
     public static void main(String[] args)
     {
-        Parser parser = new Parser("https://ru.wikipedia.org/wiki/" + city);
-        //System.out.println(parser.startParse());
-        parser.createData();
+        Parser parser = new Parser(city);
+
+        parser.createCityData();
     }
 }

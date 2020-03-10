@@ -1,4 +1,4 @@
-public class Data
+public class CityData
 {
     private String state = "";
     private String city = "";
