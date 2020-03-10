@@ -73,8 +73,22 @@ public class Parser
 
     private void pullHeight_NUM()
     {
-        String height_NUM = page.select("span[class=no-wikidata][data-wikidata-property-id=P2044]").first().text();
-        data.setHeight_NUM(height_NUM);
+        Elements trElements = page.select("tr");
+
+        for (Element trElem : trElements)
+        {
+            Element aElem = trElem.select("a[title=Высота над уровнем моря]").first();
+
+            if(aElem != null)
+            {
+                String height_NUM = trElem.text();
+                height_NUM = height_NUM.replace("Высота НУМ", "");
+                data.setHeight_NUM(height_NUM);
+                break;
+            }
+
+        }
+
     }
 
     private void pullClimateType()
@@ -91,8 +105,8 @@ public class Parser
                 data.setClimate_type(climate_type);
                 break;
             }
-
         }
+
     }
 
     private void pullTimeZone()
@@ -109,8 +123,8 @@ public class Parser
                 data.setTime_zone(time_zone);
                 break;
             }
-
         }
+
     }
 
 
@@ -130,7 +144,8 @@ public class Parser
 
             if(aElem != null)
             {
-                String car_code = trElem.select("span[class=no-wikidata]").first().text();
+                String car_code = trElem.text();
+                car_code = car_code.replace("Автомобильный код", "");
                 data.setCar_code(car_code);
                 break;
             }
@@ -156,8 +171,7 @@ public class Parser
         }
     }
 
-
-
-
-
+    public CityData getData() {
+        return data;
+    }
 }

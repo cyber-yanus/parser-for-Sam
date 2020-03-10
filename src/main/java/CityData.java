@@ -50,4 +50,18 @@ public class CityData
     public void setTelephone_code(String telephone_code) {
         this.telephone_code = telephone_code;
     }
+
+    @Override
+    public String toString() {
+        return "state "+state+
+                "\ncity "+city+
+                "\narea "+area+
+                "\nheight_NUM "+height_NUM+
+                "\nclimate_type "+climate_type+
+                "\ntime_zone "+time_zone+
+                "\npopulation "+population+
+                "\ndescription "+description+
+                "\ncar_code "+car_code+
+                "\ntelephone_code "+telephone_code;
+    }
 }
