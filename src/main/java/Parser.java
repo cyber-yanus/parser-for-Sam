@@ -68,7 +68,9 @@ public class Parser
 
         if (area != null)
         {
+            area = "\""+area+"\"";
             area = area.replace("[1]", "");
+            area = area.replace("[2]", "");
             data.setArea(area);
         }
     }

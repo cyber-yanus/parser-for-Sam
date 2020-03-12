@@ -1,4 +1,6 @@
 import java.io.*;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 
 public class Main
 {
@@ -26,7 +28,7 @@ public class Main
     private static void saveCSV()
     {
         try{
-            FileWriter writer = new FileWriter("test.csv");
+            Writer writer = new OutputStreamWriter(new FileOutputStream("test.csv"), StandardCharsets.UTF_8.newEncoder());
             StringBuilder sb = new StringBuilder();
 
             for (CityData data : Parser.datas)
